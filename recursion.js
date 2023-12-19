@@ -89,3 +89,26 @@ let list = {
   }
   console.log(printList(list))
 
+//   loop-based
+let list1 = {
+    value: 1,
+    next: {
+      value: 2,
+      next: {
+        value: 3,
+        next: {
+          value: 4,
+          next: null
+        }
+      }
+    }
+  };
+  function printList1(list1) {
+    let tmp = list1;
+     while (tmp){
+     console.log(tmp.value);
+     tmp = tmp.next;
+  }
+}
+ console.log( printList1(list1));
+
