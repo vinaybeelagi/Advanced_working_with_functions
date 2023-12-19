@@ -25,3 +25,9 @@ function sumTo1(n){
     return n+sumTo1(n-1);
 }
 console.log(sumTo1(100));
+
+// The solution using the formula: sumTo(n) = n*(n+1)/2:
+function sumTo2(n) {
+    return  n*(n+1)/2;
+    }
+    console.log(sumTo2(100));
