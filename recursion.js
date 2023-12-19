@@ -44,3 +44,11 @@ function factorial1(n) {
     return (n!=1) ? n*factorial(n-1) : 1;
 }
 console.log(factorial1(5))
+
+// Fibonacci numbers-recursion method
+function fib(n) {
+    if(n <=1) return n;
+    return fib(n-1) + fib (n-2);
+}
+console.log(fib(3));
+console.log(fib(5));
