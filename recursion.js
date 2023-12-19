@@ -31,3 +31,10 @@ function sumTo2(n) {
     return  n*(n+1)/2;
     }
     console.log(sumTo2(100));
+
+    // task-Calculate factorial
+    function factorial(n){
+        if (n==1) return n;
+        return n*factorial(n-1)
+    }
+console.log(factorial(5));
