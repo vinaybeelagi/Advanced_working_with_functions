@@ -67,3 +67,25 @@ function fib1(n){
 console.log(fib1(3));
 console.log(fib1(77));
 
+// task- Output a single-linked list-Loop-based solution
+let list = {
+    value: 1,
+    next: {
+      value: 2,
+      next: {
+        value: 3,
+        next: {
+          value: 4,
+          next: null
+        }
+      }
+    }
+  };
+  function printList(list){
+    console.log(list.value);
+    if (list.next){
+        printList(list.next);
+    }
+  }
+  console.log(printList(list))
+
