@@ -92,21 +92,31 @@
 // //In this corrected code, user is declared outside the if block, making it accessible in the broader scope.
 
 // Sum with closures
-function sum (a){
-    return function(b) {
-        return a+b;
-    };
+// function sum (a){
+//     return function(b) {
+//         return a+b;
+//     };
+// }
+// console.log(sum(4)(3));
+// console.log(sum(5)(-1));
+
+// //task- Is variable visible?
+// let x = 1;
+
+// function func() {
+//   console.log(x); //ans: ReferenceError: Cannot access 'x' before initialization
+//   let x = 2;
+// }
+
+// func();
+
+//task- Filter through function-in between
+function isBetween(a,b){
+    return function(x) {
+        return x >= a && x <=b;
+    }
 }
-console.log(sum(4)(3));
-console.log(sum(5)(-1));
+let arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(arr.filter(isBetween(3,6)))
 
-//task- Is variable visible?
-let x = 1;
-
-function func() {
-  console.log(x); //ans: ReferenceError: Cannot access 'x' before initialization
-  let x = 2;
-}
-
-func();
 
