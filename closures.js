@@ -76,3 +76,17 @@ if (true) {
 sayHi();
 //The result is an error.The function sayHi is declared inside the if, so it only lives inside it. There is no sayHi outside.
 
+// corrected code
+let phrase = "Hello";
+let user; // Declare user outside the if block
+
+if (true) {
+  user = "John"; // Assign a value to user inside the if block
+}
+
+function sayHi() {
+  alert(`${phrase}, ${user}`);
+}
+
+sayHi();
+//In this corrected code, user is declared outside the if block, making it accessible in the broader scope.
