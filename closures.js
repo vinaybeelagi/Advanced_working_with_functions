@@ -129,4 +129,16 @@ function inArray(arr1) {
   let arr1 = [1, 2, 3, 4, 5, 6, 7];
   console.log( arr1.filter(inArray([1, 2, 10])) ); // 1,2
 
+//   Task-Sort by field
+function byField(fieldName) {
+    return (a,b) => a[fieldName]>b[fieldName] ? 1 : -1 ;
+}
+let users = [
+    { name: "John", age: 20, surname: "Johnson" },
+    { name: "Pete", age: 18, surname: "Peterson" },
+    { name: "Ann", age: 19, surname: "Hathaway" }
+  ];
+  console.log(users.sort(byField('name')));
+  console.log(users.sort(byField('age')));
+
 
