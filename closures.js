@@ -43,3 +43,21 @@ function makeCounter() {
   
   alert( counter2() ); // ans:0
   alert( counter2() ); // ans:1
+
+//   task - Counter object
+function counter() {
+    let count = 0;
+  
+    this.up = function() {
+      return ++count;
+    };
+    this.down = function() {
+      return --count;
+    };
+  }
+  
+  let counter = new Counter();
+  
+  alert( counter.up() ); // ans :1
+  alert( counter.up() ); // ans :2
+  alert( counter.down() ); //ans : 1
