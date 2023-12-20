@@ -36,4 +36,21 @@
 (function (){
     var message = "hello";
     console.log(message);
+})();// Function Expression is created and immediately called
+
+// Ways to create IIFE
+(function(){
+    console.log("Parentheses around the function");
 })();
+
+(function () {
+    console.log("Parentheses around the whole thing");
+} ());
+
+!function() {
+    console.log("Bitwise NOT operator starts the expression")
+}();
+
++function() {
+    console.log("Unary plus starts the expression");
+}();
