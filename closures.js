@@ -119,4 +119,14 @@ function isBetween(a,b){
 let arr = [1, 2, 3, 4, 5, 6, 7];
 console.log(arr.filter(isBetween(3,6)))
 
+ //task- Filter through function-filter array
+function inArray(arr1) {
+    return function(x1) {
+      return arr1.includes(x1);
+    };
+  }
+  
+  let arr1 = [1, 2, 3, 4, 5, 6, 7];
+  console.log( arr1.filter(inArray([1, 2, 10])) ); // 1,2
+
 
