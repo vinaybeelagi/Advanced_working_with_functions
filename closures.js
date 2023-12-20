@@ -100,3 +100,13 @@ function sum (a){
 console.log(sum(4)(3));
 console.log(sum(5)(-1));
 
+//task- Is variable visible?
+let x = 1;
+
+function func() {
+  console.log(x); //ans: ReferenceError: Cannot access 'x' before initialization
+  let x = 2;
+}
+
+func();
+
