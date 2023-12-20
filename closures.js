@@ -141,4 +141,28 @@ let users = [
   console.log(users.sort(byField('name')));
   console.log(users.sort(byField('age')));
 
+//   Task -Army of functions
+function makeArmy() {
+    let shooters = [];
+  
+    let i = 0;
+    while (i < 10) {
+        let j = i;
+        let shooter = function() { // shooter function
+          console.log( j ); // should show its number
+        };
+      shooters.push(shooter);
+      i++;
+    }
+  
+    return shooters;
+  }
+  
+  let army = makeArmy();
+  
+  // Now the code works correctly
+  army[0](); 
+ army[5](); 
+
+
 
