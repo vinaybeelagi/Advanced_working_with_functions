@@ -65,3 +65,14 @@ let triple = mul.bind(null, 3);
 
 console.log(triple(4));
 console.log(triple(5));
+
+// Task-Bound function as a method
+function f() {
+    alert( this ); // null
+  }
+  
+  let user = {
+    g: f.bind(null)
+  };
+  
+  user.g();//The answer: null.
