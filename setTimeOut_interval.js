@@ -21,3 +21,17 @@ let timerId1 = setInterval(()=> console.log("test"),3000);
 setTimeout(()=>{clearInterval(timerId1)
 console.log("stop"),5000}
 );
+
+// task-Output every second (Using nested setTimeout):
+function printNumbers(from,to) {
+    let current = from;
+
+    setTimeout(function go() {
+        console.log(current);
+        if (current<to){
+            setTimeout(go,1000);
+        }
+        current++;
+    },1000)
+}
+printNumbers(5,10)
