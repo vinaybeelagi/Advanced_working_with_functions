@@ -6,7 +6,7 @@
 //     }
 // };
 // // setTimeout(function(){
-// //     user.sayHi()    
+// //     user.sayHi()
 // // }, 1000);
 // setTimeout(() => { user.sayHi()}, 1000);
 
@@ -36,9 +36,9 @@
 //       console.log(`Hello, ${this.firstName}!`);
 //     }
 //   };
-  
+
 //   let sayHi = user4.sayHi.bind(user4); // (*)
-  
+
 //   // can run it without an object
 //   sayHi();
 // setTimeout(sayHi,1000);
@@ -70,33 +70,51 @@
 // function f() {
 //     console.log( this ); // null
 //   }
-  
+
 //   let user7 = {
 //     g: f.bind(null)
 //   };
-  
+
 //   user.g();//The answer: null.
 
 // //   task-Second bind
 function f() {
-    console.log(this.name);
-  }
-  
-  f = f.bind( {name: "marker"} ).bind( {name: "Ann" } );
-  
-  f();
-  //The answer: John.
+  console.log(this.name);
+}
+
+f = f.bind({ name: "marker" }).bind({ name: "Ann" });
+
+f();
+//The answer: John.
 
 //   task-Function property after bind
 function sayHi() {
-    console.log( this.name );
-  }
-  sayHi.test = 5;
-  
-  let bound = sayHi.bind({
-    name: "John"
-  });
-  
-  console.log( bound.test );
-  //The answer: undefined.
+  console.log(this.name);
+}
+sayHi.test = 5;
+
+let bound = sayHi.bind({
+  name: "John",
+});
+
+console.log(bound.test);
+//The answer: undefined.
 // The result of bind is another object. It does not have the test property.
+
+// task-Fix a function that loses "this"
+
+function askPassword(ok, fail) {
+  let password = prompt("Password?", "");
+  if (password == "rockstar") ok();
+  else fail();
+}
+let user = {
+  name: "jimmy",
+  loginOk() {
+    alert(`${this.name} logged in`);
+  },
+  loginFail() {
+    alert(`${this.name} failed to log in`);
+  },
+};
+askPassword(user.loginOk.bind(user), user.loginFail.bind(user));
