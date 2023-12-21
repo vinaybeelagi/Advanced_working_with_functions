@@ -19,3 +19,12 @@ function func() {
 }
 let funcUser = func.bind(user2);
 funcUser();
+
+let user3 = {
+    firstName:"aarush"
+};
+function func1(phrase) {
+    console.log(phrase + ',' +this.firstName);
+}
+let funcUser3 = func1.bind(user3);
+funcUser3("hello");
