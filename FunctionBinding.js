@@ -86,3 +86,17 @@ function f() {
   
   f();
   //The answer: John.
+
+//   task-Function property after bind
+function sayHi() {
+    console.log( this.name );
+  }
+  sayHi.test = 5;
+  
+  let bound = sayHi.bind({
+    name: "John"
+  });
+  
+  console.log( bound.test );
+  //The answer: undefined.
+// The result of bind is another object. It does not have the test property.
