@@ -78,43 +78,59 @@
 //   user.g();//The answer: null.
 
 // //   task-Second bind
-function f() {
-  console.log(this.name);
-}
+// function f() {
+//   console.log(this.name);
+// }
 
-f = f.bind({ name: "marker" }).bind({ name: "Ann" });
+// f = f.bind({ name: "marker" }).bind({ name: "Ann" });
 
-f();
-//The answer: John.
+// f();
+// //The answer: John.
 
-//   task-Function property after bind
-function sayHi() {
-  console.log(this.name);
-}
-sayHi.test = 5;
+// //   task-Function property after bind
+// function sayHi() {
+//   console.log(this.name);
+// }
+// sayHi.test = 5;
 
-let bound = sayHi.bind({
-  name: "John",
-});
+// let bound = sayHi.bind({
+//   name: "John",
+// });
 
-console.log(bound.test);
-//The answer: undefined.
+// console.log(bound.test);
+// //The answer: undefined.
 // The result of bind is another object. It does not have the test property.
 
 // task-Fix a function that loses "this"
 
+// function askPassword(ok, fail) {
+//   let password = prompt("Password?", "");
+//   if (password == "rockstar") ok();
+//   else fail();
+// }
+// let user = {
+//   name: "jimmy",
+//   loginOk() {
+//     alert(`${this.name} logged in`);
+//   },
+//   loginFail() {
+//     alert(`${this.name} failed to log in`);
+//   },
+// };
+// askPassword(user.loginOk.bind(user), user.loginFail.bind(user));
+
+// task-Partial application for login
 function askPassword(ok, fail) {
-  let password = prompt("Password?", "");
-  if (password == "rockstar") ok();
-  else fail();
-}
-let user = {
-  name: "jimmy",
-  loginOk() {
-    alert(`${this.name} logged in`);
-  },
-  loginFail() {
-    alert(`${this.name} failed to log in`);
-  },
-};
-askPassword(user.loginOk.bind(user), user.loginFail.bind(user));
+    let password = prompt("Password?", '');
+    if (password == "rockstar") ok();
+    else fail();
+  }
+  
+  let user6 = {
+    name: "vinay",
+  
+    login(result) {
+      alert( this.name + (result ? ' logged in' : ' failed to log in') );
+    }
+  };
+  askPassword(user6.login.bind(user6, true), user6.login.bind(user6, false));
