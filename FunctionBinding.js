@@ -28,3 +28,16 @@ function func1(phrase) {
 }
 let funcUser3 = func1.bind(user3);
 funcUser3("hello");
+
+// object method
+let user4 = {
+    firstName: "walker",
+    sayHi() {
+      console.log(`Hello, ${this.firstName}!`);
+    }
+  };
+  
+  let sayHi = user4.sayHi.bind(user4); // (*)
+  
+  // can run it without an object
+  sayHi();
