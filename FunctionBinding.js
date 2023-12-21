@@ -41,3 +41,8 @@ let user4 = {
   
   // can run it without an object
   sayHi();
+setTimeout(sayHi,1000);
+
+user4 = {
+    sayHi(){console.log("another in settime out")}
+};
