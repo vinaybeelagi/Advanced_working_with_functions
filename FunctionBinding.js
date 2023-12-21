@@ -46,3 +46,22 @@ setTimeout(sayHi,1000);
 user4 = {
     sayHi(){console.log("another in settime out")}
 };
+//ments are passed “as is”, only this is fixed by bind
+let user5 = {
+    fName :"bhushan",
+say(phrase) {
+    console.log(`${phrase},${this.fName}!`);
+}
+}
+let say = user5.say.bind(user5);
+say("hello");
+say("bye");
+
+// Partial functions use bind to create a function double on its base
+function mul(a,b) {
+    return a*b;
+}
+let triple = mul.bind(null, 3);
+
+console.log(triple(4));
+console.log(triple(5));
